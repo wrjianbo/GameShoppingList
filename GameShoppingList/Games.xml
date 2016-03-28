@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<games>
+    <game>
+        <name>Dota2</name>
+        <type>MOBA</type>
+        <price>€0.01</price>
+        <image>dota2.jpg</image>
+        <url>http://store.steampowered.com/app/570/</url>
+        <platform>Steam</platform>
+        <dor>9 Jul 2013</dor>
+        <des>Dota is a competitive game of action and strategy, played both professionally and casually by millions of passionate fans worldwide. Players pick from a pool of over a hundred heroes, forming two teams of five players.</des>
+    </game>
+    <game>
+        <name>PLANTS VS.ZOMBIES</name>
+        <type>Strategy</type>
+        <price>€34.99</price>
+        <image>pvz.jpg</image>
+        <url>https://www.origin.com/en-ie/store/buy/plants-vs-zombies-garden-warfare/pc-download/base-game/digital-deluxe-edition</url>
+        <platform>EA</platform>
+        <dor>27 Jun 2014</dor>
+        <des>Plants vs. Zombies Garden Warfare digs into the trenches with an explosive action experience. Blast zombies, plants and unique characters across a mine-blowing world that delivers the depth of a traditional online shooter and the refreshing humor of the Plants vs. Zombies universe. </des>
+    </game>
+    <game>
+        <name>Counter-Strike: Global Offensive</name>
+        <type>FPS</type>
+        <price>€13.99</price>
+        <image>csgo.jpg</image>
+        <url>http://store.steampowered.com/app/730/</url>
+        <platform>Steam</platform>
+        <dor>21 Aug 2012</dor>
+        <des>Counter-Strike: Global Offensive (CS: GO) will expand upon the team-based action gameplay that it pioneered when it was launched 14 years ago. CS: GO features new maps, characters, and weapons and delivers updated versions of the classic CS content (de_dust, etc.).</des>
+    </game>
+    <game>
+        <name>METAL GEAR SOLID V</name>
+        <type>Action</type>
+        <price>€59.99</price>
+        <image>mgs5.jpg</image>
+        <url>http://store.steampowered.com/app/287700/</url>
+        <platform>Steam</platform>
+        <dor>1 Sep 2015</dor>
+        <des>Ushering in a new era for the METAL GEAR franchise with cutting-edge technology powered by the Fox Engine, METAL GEAR SOLID V: The Phantom Pain, will provide players a first-rate gaming experience as they are offered tactical freedom to carry out open-world missions.</des>
+    </game>
+    <game>
+        <name>BATTLEFIELD 4</name>
+        <type>FPS</type>
+        <price>€29.99</price>
+        <image>bf4.jpg</image>
+        <url>https://www.origin.com/en-ie/store/buy/battlefield-4/pc-download/base-game/digital-deluxe-edition</url>
+        <platform>EA</platform>
+        <dor>1 Nov 2013</dor>
+        <des>Embrace unrivaled destruction in Battlefield 4. Revel in the glorious chaos of all-out war packed with rewarding, tactical challenges in an interactive environment. Demolish buildings that shield your enemy. Lead an assault from the back of a gun boat. You have the freedom to do more and be more, playing to your strengths and carving your own path to victory.
+        </des>
+    </game>
+    <game>
+        <name>Street Fighter V</name>
+        <type>Fighting</type>
+        <price>€59.99</price>
+        <image>sfv.jpg</image>
+        <url>http://store.steampowered.com/app/310950/</url>
+        <platform>Steam</platform>
+        <dor>16 Feb 2016</dor>
+        <des>The legendary fighting franchise returns with STREET FIGHTER V! Stunning visuals depict the next generation of World Warriors in unprecedented detail, while exciting and accessible battle mechanics deliver endless fighting fun that both beginners and veterans can enjoy.</des>
+    </game>
+    <game>
+        <name>Tom Clancy's The Division</name>
+        <type>Open World</type>
+        <price>€89.98</price>
+        <image>tctd.jpg</image>
+        <url>http://store.steampowered.com/app/365590/</url>
+        <platform>Ubisoft</platform>
+        <dor>8 Mar 2016</dor>
+        <des>Black Friday : a devastating pandemic sweeps through New York City, and one by one, basic services fail. In only days, without food or water, society collapses into chaos. The Division, an autonomous unit of tactical agents, is activated. </des>
+    </game>
+    <game>
+        <name>Tales from the Borderlands</name>
+        <type>Adventure</type>
+        <price>€22.99</price>
+        <image>tftb.jpg</image>
+        <url>http://store.steampowered.com/app/330830/</url>
+        <platform>Steam</platform>
+        <dor>25 Nov 2014</dor>
+        <des>Tales from the Borderlands is a five part episodic game series from the creators of The Walking Dead: A Telltale Games Series. Set on the unforgiving world of Pandora after the events seen in Borderlands 2, this is a story full of Borderlands' trademark humor, following two adventurers on their </des>
+    </game>
+    <game>
+        <name>Fallout 4</name>
+        <type>RPG</type>
+        <price>€59.99</price>
+        <image>f4.jpg</image>
+        <url>http://store.steampowered.com/app/377160/</url>
+        <platform>Steam</platform>
+        <dor>9 Nov 2015</dor>
+        <des>Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welcome you to the world of Fallout 4, their most ambitious game ever, and the next generation of open-world gaming.</des>
+    </game>
+    <game>
+        <name>RPG Maker MV</name>
+        <type>Web Publishing Software</type>
+        <price>€73.99</price>
+        <image>rmm.jpg</image>
+        <url>http://store.steampowered.com/app/363890/</url>
+        <platform>Steam</platform>
+        <dor>23 Oct 2015</dor>
+        <des>POWERFUL enough for a developer SIMPLE enough for a child VERSATILE enough for any platform! RPG MAKER MV allows you to make the RPG of your dreams! This latest version includes a host of new features and export options for MacOSX, Android, and iPhone!</des>
+    </game>
+    <game>
+        <name>South Park: The Stick of Truth</name>
+        <type>RPG</type>
+        <price>€29.99</price>
+        <image>sptsof.jpg</image>
+        <url>http://store.steampowered.com/app/213670/</url>
+        <platform>Ubisoft</platform>
+        <dor>7 Mar 2014</dor>
+        <des>From the perilous battlefields of the fourth-grade playground, a young hero will rise, destined to be South Park's savior. From the creators of South Park, Trey Parker and Matt Stone, comes an epic quest to become cool. Introducing South Park: The Stick of Truth. For a thousand years, the battle has been </des>
+    </game>
+    <game>
+        <name>Rise of the Tomb Raider</name>
+        <type>Advanture</type>
+        <price>€49.99</price>
+        <image>rottr.jpg</image>
+        <url>http://store.steampowered.com/app/391220/</url>
+        <platform>Steam</platform>
+        <dor>28 Jan 2016</dor>
+        <des>Featuring epic, high-octane action moments set in the most beautiful hostile environments on earth, Rise of the Tomb Raider delivers a cinematic survival action adventure where you will join Lara Croft on her first tomb raiding expedition as she seeks to discover the secret of immortality.</des>
+    </game>
+    <game>
+        <name>Steam Controller</name>
+        <type>Hardware</type>
+        <price>€54.99</price>
+        <image>stc.jpg</image>
+        <url>http://store.steampowered.com/app/353370/</url>
+        <platform>Steam</platform>
+        <dor>210 Nov 2015</dor>
+        <des>Experience a new level of precise control for your favorite games. The Steam Controller lets you play your entire collection of Steam games on your TV,even the ones designed without controller support in mind.</des>
+    </game>
+    <game>
+        <name>Far Cry Primal</name>
+        <type>Open World</type>
+        <price>€64.99</price>
+        <image>fcp.jpg</image>
+        <url>http://store.steampowered.com/app/371660/</url>
+        <platform>Ubisoft</platform>
+        <dor>1 Mar 2016</dor>
+        <des>Featuring epic, high-octane action moments set in the most beautiful hostile environments on earth, Rise of the Tomb Raider delivers a cinematic survival action adventure where you will join Lara Croft on her first tomb raiding expedition as she seeks to discover the secret of immortality.</des>
+    </game>
+    <game>
+        <name>Call of Duty: Black Ops 3</name>
+        <type>FPS</type>
+        <price>€59.99</price>
+        <image>codbo.jpg</image>
+        <url>http://store.steampowered.com/app/311210/</url>
+        <platform>Steam</platform>
+        <dor>6 Nov 2015</dor>
+        <des>FWelcome to Call of Duty: Black Ops III, a dark future where a new breed of Black Ops soldier emerges and the lines are blurred between humanity and the technology we created to stay ahead.</des>
+    </game>
+    <game>
+        <name>The Gate of Firmament</name>
+        <type>Chinese RPG</type>
+        <price>€14.99</price>
+        <image>tgof.jpg</image>
+        <url>http://store.steampowered.com/app/427030/</url>
+        <platform>Steam</platform>
+        <dor>25 Feb 2016</dor>
+        <des>The "Xuan-Yuan Sword" is an epic oriental RPG series with 25 years of history.It elaborates on the very heart of this series, the idea of "one, looking at the same thing from different angles, may come to different conclusions. " through a variety of historical incidents in different times.</des>
+    </game>
+    <game>
+        <name>Assassin's Creed Syndicate Gold</name>
+        <type>ACT</type>
+        <price>€89.99</price>
+        <image>acsg.jpg</image>
+        <url>http://store.steampowered.com/app/368500/</url>
+        <platform>Ubisoft</platform>
+        <dor>19 Nov 2015</dor>
+        <des>London, 1868. In the heart of the Industrial Revolution, lead your underworld organization and grow your influence to fight those who exploit the less privileged in the name of...</des>
+    </game>
+</games>
+
+
+
+
