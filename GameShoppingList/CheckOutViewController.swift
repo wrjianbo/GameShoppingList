@@ -18,6 +18,28 @@ class CheckOutViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBOutlet weak var couponTF: UITextField!
 
+    @IBAction func topupBtn(sender: AnyObject) {
+        let alertViewController = UIAlertController(title: "Top Up", message: "How much do you want to top up?", preferredStyle: .Alert)
+        alertViewController.addTextFieldWithConfigurationHandler {
+                (textField: UITextField!) -> Void in
+                textField.placeholder = "0.00"
+        }
+        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
+            (action: UIAlertAction!) -> Void in
+            self.topupBalance(Double(alertViewController.textFields!.first!.text!)!)
+        }
+        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.Default){
+            (action: UIAlertAction!) -> Void in
+        }
+        alertViewController.addAction(okAction)
+        alertViewController.addAction(cancelAction)
+        self.presentViewController(alertViewController, animated: true, completion: nil)
+        
+    }
+   
+    @IBOutlet weak var balanceLabel: UILabel!
+    
+
 
     @IBOutlet weak var youShouldPayLabel: UILabel!
     
@@ -116,10 +138,22 @@ class CheckOutViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return request
     }
 
+    var frc_User : NSFetchedResultsController! = nil
+    func UserFetchRequest() ->NSFetchRequest{
+        
+        let request = NSFetchRequest(entityName: "User")
+        //how to sort and what to query
+        let sortor = NSSortDescriptor(key: "name", ascending: false)
+        
+        request.sortDescriptors = [sortor]
+        request.predicate = NSPredicate(format: "name == %@" , defaults.stringForKey("currentUser")! )
+        //        let predict = NSPredicate(format: "%K == %@","name","Sabin Tabirca")
+        //        request.predicate = predict
+        return request
+    }
+    var userObject : [User] = []
     
-
-    
-    
+    var balance : Double! = 0.00
     
     
     
@@ -138,25 +172,28 @@ class CheckOutViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         youShouldPayLabel.text =  "€" + String(NSString(format: "%.2f", totalmoney * m))
         frc_History = NSFetchedResultsController(fetchRequest: FetchRequest(), managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
+        frc_User = NSFetchedResultsController(fetchRequest: UserFetchRequest(), managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         frc_History.delegate = self
-        
+        frc_User.delegate = self
         do{
-            
             try frc_History.performFetch()
+            try frc_User.performFetch()
             
         }catch{
-            
             print("fetch core data error")
         }
         paidmoney = totalmoney
+        userObject = frc_User.fetchedObjects as! [User]
+        
+        balance = Double(NSString(format: "%.2f", userObject[0].balance!.doubleValue) as String)
+        balanceLabel.text = "Balance:€" + String(NSString(format: "%.2f", balance))
         
                 // Do any additional setup after loading the view.
     }
 
     
     @IBAction func checkOut(sender: UIButton) {
-        if totalmoney > 0{
+        if totalmoney > 0 && balance >= paidmoney{
             let tableEntity = NSEntityDescription.entityForName("HistoryList", inManagedObjectContext: context)
             managedHistoryObject = HistoryList(entity: tableEntity!, insertIntoManagedObjectContext: context)
             var x : String = String()
@@ -174,18 +211,38 @@ class CheckOutViewController: UIViewController,UITableViewDelegate,UITableViewDa
             managedHistoryObject!.coupon = couponCode
             managedHistoryObject!.discount = discountNum
             managedHistoryObject!.paid = paidmoney
-        
+            balance = balance - paidmoney
+            userObject[0].balance = balance
             do{
                 try context.save()
             }catch{
                 print("core data can not save after delete")
             }
         }
-        else{
+        else if totalmoney > 0 && balance < paidmoney{
+            let alertViewController = UIAlertController(title: "Balance not enough", message: "Do you want to top up €" + String(self.paidmoney - self.balance) + " now?", preferredStyle: .Alert)
+            alertViewController.addTextFieldWithConfigurationHandler {
+                (textField: UITextField!) -> Void in
+                textField.placeholder = "0.00"
+                textField.text = String(self.paidmoney - self.balance)
+            }
+            let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
+                (action: UIAlertAction!) -> Void in
+                
+                self.topupBalance(Double((alertViewController.textFields?.first?.text)!)!)
+            }
+            let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.Default){
+                (action: UIAlertAction!) -> Void in
+            }
+            alertViewController.addAction(okAction)
+            alertViewController.addAction(cancelAction)
+            self.presentViewController(alertViewController, animated: true, completion: nil)
+        }
+        else {
             let alertViewController = UIAlertController(title: "Empty Shooping List", message: "Please go to store and pick some games", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
                 (action: UIAlertAction!) -> Void in
-                print("you choose ok")
+                
             }
             alertViewController.addAction(okAction)
             self.presentViewController(alertViewController, animated: true, completion: nil)
@@ -237,7 +294,17 @@ class CheckOutViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return cell
     }
     
-    
+    func topupBalance(d:Double){
+        balance = balance + d
+        userObject[0].balance = balance
+        do{
+            try context.save()
+        }catch{
+            print("core data can not save after delete")
+        }
+        balanceLabel.text = "Balance:€" + String(NSString(format: "%.2f", balance))
+        
+    }
     
 
     

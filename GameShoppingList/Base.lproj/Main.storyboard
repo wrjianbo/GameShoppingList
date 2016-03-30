@@ -689,7 +689,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="318" height="283"/>
+                                    <rect key="frame" x="0.0" y="147" width="318" height="200"/>
                                 </variation>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fij-t4-pfn">
@@ -795,6 +795,25 @@
                                     <action selector="applyBtn:" destination="g9f-71-V7W" eventType="touchUpInside" id="gej-kj-rUo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiR-ej-7h2">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="13" y="76" width="192" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eu7-ZG-P9I">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Top up"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="258" y="71" width="48" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="topupBtn:" destination="g9f-71-V7W" eventType="touchUpInside" id="Gts-Ev-WnY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -811,6 +830,8 @@
                                 <exclude reference="d0Q-Fu-rKh"/>
                                 <exclude reference="RJm-Zt-Ygw"/>
                                 <exclude reference="hNd-3N-Y7u"/>
+                                <exclude reference="RiR-ej-7h2"/>
+                                <exclude reference="Eu7-ZG-P9I"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -827,10 +848,13 @@
                                 <include reference="d0Q-Fu-rKh"/>
                                 <include reference="RJm-Zt-Ygw"/>
                                 <include reference="hNd-3N-Y7u"/>
+                                <include reference="RiR-ej-7h2"/>
+                                <include reference="Eu7-ZG-P9I"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="balanceLabel" destination="RiR-ej-7h2" id="Ga4-U4-k0u"/>
                         <outlet property="checkoutTV" destination="alo-IV-1eA" id="MKL-UW-b3y"/>
                         <outlet property="couponTF" destination="5iP-he-7xa" id="WN9-81-SGC"/>
                         <outlet property="discount" destination="PoY-qz-axf" id="h91-DO-EQw"/>
@@ -1509,9 +1533,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lE9-xZ-u7D"/>
-        <segue reference="qto-jJ-iLv"/>
+        <segue reference="COx-VY-i9I"/>
         <segue reference="wkI-hF-3MR"/>
+        <segue reference="gpD-NX-4CW"/>
         <segue reference="lQ3-K5-edF"/>
     </inferredMetricsTieBreakers>
 </document>

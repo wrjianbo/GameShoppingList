@@ -20,10 +20,52 @@ class RegisterViewController: UIViewController,NSFetchedResultsControllerDelegat
     
     @IBAction func registerBtn(sender: AnyObject) {
         if checkPassword()&&checkUsername(){
-//            saveUser()
-            print("xxx")
-            let view = self.storyboard?.instantiateViewControllerWithIdentifier("login") as? LoginViewController
-            self.navigationController?.pushViewController(view!, animated: true)
+            
+            frc_User = NSFetchedResultsController(fetchRequest: FetchRequest(), managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            frc_User.delegate = self
+            
+            do{
+                
+                try frc_User.performFetch()
+                
+            }catch{
+                
+                print("fetch core data error")
+            }
+            if frc_User.fetchedObjects != nil{
+                var gameObject : [User] = []
+                gameObject = frc_User.fetchedObjects! as! [User]
+                if gameObject != []{
+                    let alertViewController = UIAlertController(title: "User Exist", message: "rename", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
+                        (action: UIAlertAction!) -> Void in
+                        print("retry")
+                    }
+                    alertViewController.addAction(okAction)
+                    self.presentViewController(alertViewController, animated: true, completion: nil)
+                }
+                else{
+                    let alertViewController = UIAlertController(title: "Successful", message: "rename", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
+                        (action: UIAlertAction!) -> Void in
+                        self.saveUser()
+                        let view = self.storyboard?.instantiateViewControllerWithIdentifier("login") as? LoginViewController
+                        self.navigationController?.pushViewController(view!, animated: true)
+
+                    }
+                    alertViewController.addAction(okAction)
+                    self.presentViewController(alertViewController, animated: true, completion: nil)
+                    print("yyy")
+                }
+                
+
+            }
+            else{
+              print("zzz")
+            }
+//            let view = self.storyboard?.instantiateViewControllerWithIdentifier("login") as? LoginViewController
+//            self.navigationController?.pushViewController(view!, animated: true)
             
         }
         else if !checkPassword(){
@@ -53,6 +95,8 @@ class RegisterViewController: UIViewController,NSFetchedResultsControllerDelegat
     func FetchRequest() ->NSFetchRequest{
         
         let request = NSFetchRequest(entityName: "User")
+        
+        request.predicate = NSPredicate(format: "name == %@" , nameLabel.text!.uppercaseString )
         //how to sort and what to query
         let sortor = NSSortDescriptor(key: "name", ascending: true)
         request.sortDescriptors = [sortor]
@@ -66,18 +110,7 @@ class RegisterViewController: UIViewController,NSFetchedResultsControllerDelegat
         super.viewDidLoad()
         passwordLabel.secureTextEntry = true
         repeatLabel.secureTextEntry = true
-        frc_User = NSFetchedResultsController(fetchRequest: FetchRequest(), managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        frc_User.delegate = self
-        
-        do{
-            
-            try frc_User.performFetch()
-            
-        }catch{
-            
-            print("fetch core data error")
-        }
+
         // Do any additional setup after loading the view.
     }
 
