@@ -23,7 +23,7 @@ class HistoryDetailsViewController: UIViewController,NSFetchedResultsControllerD
         request.sortDescriptors = [sortor]
         //        let predict = NSPredicate(format: "%K == %@","name","Sabin Tabirca")
         //        request.predicate = predict
-
+//        request.predicate = NSPredicate(format: "name == " + , <#T##args: CVarArgType...##CVarArgType#>)
         return request
     }
     @IBOutlet weak var dateLabel: UILabel!

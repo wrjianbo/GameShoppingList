@@ -12,6 +12,7 @@
 		6A1DBF221CAB661B00CD7F8A /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DBF201CAB661B00CD7F8A /* User+CoreDataProperties.swift */; };
 		6A1DBF231CAB661B00CD7F8A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DBF211CAB661B00CD7F8A /* User.swift */; };
 		6A1DBF251CAB678B00CD7F8A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DBF241CAB678B00CD7F8A /* RegisterViewController.swift */; };
+		6A1DBF271CAC36ED00CD7F8A /* RetrieveHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DBF261CAC36ED00CD7F8A /* RetrieveHistoryViewController.swift */; };
 		6A82DC4D1CA7636F003C605E /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82DC4C1CA7636F003C605E /* ShoppingListTableViewController.swift */; };
 		6A82DC511CA76A9C003C605E /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82DC4F1CA76A9C003C605E /* ShoppingList.swift */; };
 		6AA5D23B1CA83B6C0090E5FC /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5D23A1CA83B6C0090E5FC /* CheckOutViewController.swift */; };
@@ -60,6 +61,7 @@
 		6A1DBF201CAB661B00CD7F8A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6A1DBF211CAB661B00CD7F8A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		6A1DBF241CAB678B00CD7F8A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		6A1DBF261CAC36ED00CD7F8A /* RetrieveHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveHistoryViewController.swift; sourceTree = "<group>"; };
 		6A82DC4C1CA7636F003C605E /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
 		6A82DC4F1CA76A9C003C605E /* ShoppingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingList.swift; path = ../ShoppingList.swift; sourceTree = "<group>"; };
 		6AA5D23A1CA83B6C0090E5FC /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				6AA5D2551CA895F90090E5FC /* HistoryListTableViewController.swift */,
 				6AA5D2571CA8A3680090E5FC /* HistoryDetailsViewController.swift */,
 				6AA5D23E1CA868A60090E5FC /* UpdateViewController.swift */,
+				6A1DBF261CAC36ED00CD7F8A /* RetrieveHistoryViewController.swift */,
 				6AC6B7AC1CA74AAB000C40A6 /* Main.storyboard */,
 				6AC6B7B21CA74AAB000C40A6 /* Assets.xcassets */,
 				6AC6B7B41CA74AAB000C40A6 /* LaunchScreen.storyboard */,
@@ -330,6 +333,7 @@
 				6AC6B7B11CA74AAB000C40A6 /* GameShoppingList.xcdatamodeld in Sources */,
 				6AC6B7A91CA74AAB000C40A6 /* AppDelegate.swift in Sources */,
 				6AA5D2581CA8A3680090E5FC /* HistoryDetailsViewController.swift in Sources */,
+				6A1DBF271CAC36ED00CD7F8A /* RetrieveHistoryViewController.swift in Sources */,
 				6AA5D2501CA8785B0090E5FC /* ShoppingList+CoreDataProperties.swift in Sources */,
 				6AC6B7DC1CA74CF9000C40A6 /* Details.swift in Sources */,
 				6A82DC4D1CA7636F003C605E /* ShoppingListTableViewController.swift in Sources */,

@@ -52,7 +52,7 @@ class RegisterViewController: UIViewController,NSFetchedResultsControllerDelegat
                         self.saveUser()
                         let view = self.storyboard?.instantiateViewControllerWithIdentifier("login") as? LoginViewController
                         self.navigationController?.pushViewController(view!, animated: true)
-
+                        
                     }
                     alertViewController.addAction(okAction)
                     self.presentViewController(alertViewController, animated: true, completion: nil)

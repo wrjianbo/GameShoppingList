@@ -39,6 +39,7 @@ class LoginViewController: UIViewController,NSFetchedResultsControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         password.secureTextEntry = true
+        username.text = defaults.stringForKey("currentUser")!
         // Do any additional setup after loading the view.
     }
     
@@ -51,8 +52,8 @@ class LoginViewController: UIViewController,NSFetchedResultsControllerDelegate {
         if (username.text != "" && checkUsernameAndPassword()){
             loginMessage.text = ""
             defaults.setObject(username.text!.uppercaseString, forKey: "currentUser")
-            loginMessage.text = "Welcome " + defaults.stringForKey("currentUser")!
-            let alertViewController = UIAlertController(title: "Login Successfully", message: "Your cueerent balence is €" + String(balance), preferredStyle: .Alert)
+//            loginMessage.text = "Welcome " + defaults.stringForKey("currentUser")!
+            let alertViewController = UIAlertController(title: "Welcome! " + defaults.stringForKey("currentUser")!, message: "Your cueerent balence is €" + String(balance), preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
                 (action: UIAlertAction!) -> Void in
                 self.performSegueWithIdentifier("login_segue", sender: self)
