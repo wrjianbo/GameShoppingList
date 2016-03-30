@@ -37,6 +37,7 @@ class CheckOutViewController: UIViewController,UITableViewDelegate,UITableViewDa
             m = (100.00 - Double(discountNum)) / 100.00
             paidmoney = Double(NSString(format: "%.2f", totalmoney * m) as String)
             youShouldPayLabel.text =  "€" + String(paidmoney)
+            discount.text = String(discountNum) + "%"
             let alertViewController = UIAlertController(title: "Coupon apply successfully!", message: "Your code is :" + couponCode + "\n It gives you " + couponSuffix + "% off" , preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){
                 (action: UIAlertAction!) -> Void in
@@ -156,31 +157,29 @@ class CheckOutViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBAction func checkOut(sender: UIButton) {
         if totalmoney > 0{
-        let tableEntity = NSEntityDescription.entityForName("HistoryList", inManagedObjectContext: context)
-        managedHistoryObject = HistoryList(entity: tableEntity!, insertIntoManagedObjectContext: context)
-        var x : String = String()
-        for game in gameObject {
-            x = x + game.name! + "\n"
-            x = x + "  Price:        €" + String(game.price!) + "\n"
-            x = x + "  Number:   " + String(game.number!) + "\n" + " " + "\n"
-            
-            //           managedHistoryObject.games! + game.name! + "\n"
-             context.deleteObject(game)
-        }
-        managedHistoryObject!.games = x
-        print(managedHistoryObject!.games!)
-        managedHistoryObject!.amount = totalmoney
-        managedHistoryObject!.date = NSDate()
-        managedHistoryObject!.buyer = defaults.stringForKey("currentUser")!
-        managedHistoryObject!.coupon = couponCode
-        managedHistoryObject!.discount = discountNum
-        managedHistoryObject!.paid = paidmoney
-    
-        do{
-            try context.save()
-        }catch{
-            print("core data can not save after delete")
-        }
+            let tableEntity = NSEntityDescription.entityForName("HistoryList", inManagedObjectContext: context)
+            managedHistoryObject = HistoryList(entity: tableEntity!, insertIntoManagedObjectContext: context)
+            var x : String = String()
+            for game in gameObject {
+                x = x + game.name! + "\n"
+                x = x + "  Price:        €" + String(game.price!) + "\n"
+                x = x + "  Number:   " + String(game.number!) + "\n" + " " + "\n"
+                context.deleteObject(game)
+            }
+            managedHistoryObject!.games = x
+            print(managedHistoryObject!.games!)
+            managedHistoryObject!.amount = totalmoney
+            managedHistoryObject!.date = NSDate()
+            managedHistoryObject!.buyer = defaults.stringForKey("currentUser")!
+            managedHistoryObject!.coupon = couponCode
+            managedHistoryObject!.discount = discountNum
+            managedHistoryObject!.paid = paidmoney
+        
+            do{
+                try context.save()
+            }catch{
+                print("core data can not save after delete")
+            }
         }
         else{
             let alertViewController = UIAlertController(title: "Empty Shooping List", message: "Please go to store and pick some games", preferredStyle: .Alert)
@@ -229,7 +228,7 @@ class CheckOutViewController: UIViewController,UITableViewDelegate,UITableViewDa
             cell.backgroundColor = UIColor.lightTextColor()
         }
         else{
-            cell.backgroundColor = UIColor.lightGrayColor()
+            cell.backgroundColor = UIColor.init(colorLiteralRed: 240/255, green: 240/255, blue: 240/255, alpha: 1)
 
         }
         

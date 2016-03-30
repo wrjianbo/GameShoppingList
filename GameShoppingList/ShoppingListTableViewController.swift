@@ -78,6 +78,13 @@ class ShoppingListTableViewController: UITableViewController,NSFetchedResultsCon
         cell.detailTextLabel?.text = "Price:€" + String(managedGameObject.price!) + "       Number:" + String(managedGameObject.number!)
         cell.imageView?.image = UIImage(named: managedGameObject.image!)
         // Configure the cell...
+        if indexPath.row % 2 == 0{
+            cell.backgroundColor = UIColor.init(colorLiteralRed: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+        }
+        else{
+            cell.backgroundColor = UIColor.clearColor()
+            
+        }
 
         return cell
     }
