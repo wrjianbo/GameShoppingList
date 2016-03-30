@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="71H-Rv-eHA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9s7-iC-IdY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="QaE-zs-0Fh">
             <objects>
-                <viewController id="71H-Rv-eHA" customClass="LoginViewController" customModule="GameShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="71H-Rv-eHA" customClass="LoginViewController" customModule="GameShoppingList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dLp-lA-gCF"/>
                         <viewControllerLayoutGuide type="bottom" id="rXd-YN-RYR"/>
@@ -60,11 +60,11 @@
                                     <rect key="frame" x="121" y="175" width="150" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lc-12-Urn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lc-12-Urn">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="83" y="239" width="109" height="30"/>
+                                    <rect key="frame" x="25" y="253" width="58" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="loginBtn:" destination="71H-Rv-eHA" eventType="touchUpInside" id="xwM-fR-gqB"/>
@@ -76,9 +76,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="9" y="311" width="284" height="21"/>
+                                    <rect key="frame" x="9" y="376" width="284" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQ3-QR-1GI">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Register"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="214" y="253" width="57" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="Xoa-hH-5CH" kind="show" identifier="segue_for_register" id="QER-eE-UBP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85582047699999997" green="0.96137064699999997" blue="0.95363289120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="default">
@@ -90,6 +100,7 @@
                                 <exclude reference="8OR-cj-Z7W"/>
                                 <exclude reference="2Lc-12-Urn"/>
                                 <exclude reference="XkW-Xh-1oi"/>
+                                <exclude reference="HQ3-QR-1GI"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -101,9 +112,11 @@
                                 <include reference="8OR-cj-Z7W"/>
                                 <include reference="2Lc-12-Urn"/>
                                 <include reference="XkW-Xh-1oi"/>
+                                <include reference="HQ3-QR-1GI"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="A6D-gs-Uft"/>
                     <connections>
                         <outlet property="loginMessage" destination="XkW-Xh-1oi" id="92G-Jn-P7A"/>
                         <outlet property="password" destination="8OR-cj-Z7W" id="3wp-DF-8FS"/>
@@ -113,7 +126,126 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="797-Mr-khd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989" y="991"/>
+            <point key="canvasLocation" x="2907" y="991"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="o4V-zm-Bkv">
+            <objects>
+                <viewController id="Xoa-hH-5CH" customClass="RegisterViewController" customModule="GameShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rpb-fQ-bYR"/>
+                        <viewControllerLayoutGuide type="bottom" id="HJs-hQ-zee"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mqx-Hu-FaY">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMk-FS-Zh9">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="61" width="50" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5p-z7-p10">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="95" width="79" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tg-AC-OsP">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="130" width="154" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aG9-E1-GXO">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="176" y="61" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iGj-da-EiH">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="176" y="95" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-tW-TU5">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="176" y="130" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPs-wU-pWo">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Register"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="11" y="184" width="57" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="registerBtn:" destination="Xoa-hH-5CH" eventType="touchUpInside" id="E9o-DZ-XSV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDh-FL-o2D">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="47" y="320" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="9s7-iC-IdY" kind="show" id="lQ3-K5-edF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="EMk-FS-Zh9"/>
+                                <exclude reference="q5p-z7-p10"/>
+                                <exclude reference="8tg-AC-OsP"/>
+                                <exclude reference="aG9-E1-GXO"/>
+                                <exclude reference="iGj-da-EiH"/>
+                                <exclude reference="cLh-tW-TU5"/>
+                                <exclude reference="zPs-wU-pWo"/>
+                                <exclude reference="MDh-FL-o2D"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="EMk-FS-Zh9"/>
+                                <include reference="q5p-z7-p10"/>
+                                <include reference="8tg-AC-OsP"/>
+                                <include reference="aG9-E1-GXO"/>
+                                <include reference="iGj-da-EiH"/>
+                                <include reference="cLh-tW-TU5"/>
+                                <include reference="zPs-wU-pWo"/>
+                                <include reference="MDh-FL-o2D"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="aG9-E1-GXO" id="wsc-eA-OmF"/>
+                        <outlet property="passwordLabel" destination="iGj-da-EiH" id="moV-R4-zh3"/>
+                        <outlet property="repeatLabel" destination="cLh-tW-TU5" id="wl5-bo-f7B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtQ-Fg-BLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3709.5" y="1018"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="mgM-fO-P6H">
@@ -1138,7 +1270,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="logoutBtn:" destination="4cI-1J-sxt" eventType="touchUpInside" id="KdW-64-8VA"/>
-                                    <segue destination="71H-Rv-eHA" kind="modal" identifier="logout_segue" id="gOA-Hv-1ZM"/>
+                                    <segue destination="9s7-iC-IdY" kind="modal" identifier="logout_segue" id="gOA-Hv-1ZM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People like this game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYG-Jn-LPi">
@@ -1357,10 +1489,29 @@
             </objects>
             <point key="canvasLocation" x="1233" y="234"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7vy-z1-96X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9s7-iC-IdY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NrA-jm-UCv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="71H-Rv-eHA" kind="relationship" relationship="rootViewController" id="d7j-xt-77G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kic-CF-6KU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1989" y="991"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="lE9-xZ-u7D"/>
+        <segue reference="qto-jJ-iLv"/>
         <segue reference="wkI-hF-3MR"/>
-        <segue reference="oK0-H1-TVi"/>
-        <segue reference="gpD-NX-4CW"/>
+        <segue reference="lQ3-K5-edF"/>
     </inferredMetricsTieBreakers>
 </document>

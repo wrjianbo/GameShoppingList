@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6A1DBF1E1CA9DD9900CD7F8A /* HistoryList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DBF1C1CA9DD9900CD7F8A /* HistoryList+CoreDataProperties.swift */; };
 		6A1DBF1F1CA9DD9900CD7F8A /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DBF1D1CA9DD9900CD7F8A /* HistoryList.swift */; };
+		6A1DBF221CAB661B00CD7F8A /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DBF201CAB661B00CD7F8A /* User+CoreDataProperties.swift */; };
+		6A1DBF231CAB661B00CD7F8A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DBF211CAB661B00CD7F8A /* User.swift */; };
+		6A1DBF251CAB678B00CD7F8A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DBF241CAB678B00CD7F8A /* RegisterViewController.swift */; };
 		6A82DC4D1CA7636F003C605E /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82DC4C1CA7636F003C605E /* ShoppingListTableViewController.swift */; };
 		6A82DC511CA76A9C003C605E /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A82DC4F1CA76A9C003C605E /* ShoppingList.swift */; };
 		6AA5D23B1CA83B6C0090E5FC /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5D23A1CA83B6C0090E5FC /* CheckOutViewController.swift */; };
@@ -54,6 +57,9 @@
 /* Begin PBXFileReference section */
 		6A1DBF1C1CA9DD9900CD7F8A /* HistoryList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HistoryList+CoreDataProperties.swift"; path = "../HistoryList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6A1DBF1D1CA9DD9900CD7F8A /* HistoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryList.swift; path = ../HistoryList.swift; sourceTree = "<group>"; };
+		6A1DBF201CAB661B00CD7F8A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6A1DBF211CAB661B00CD7F8A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
+		6A1DBF241CAB678B00CD7F8A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6A82DC4C1CA7636F003C605E /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
 		6A82DC4F1CA76A9C003C605E /* ShoppingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingList.swift; path = ../ShoppingList.swift; sourceTree = "<group>"; };
 		6AA5D23A1CA83B6C0090E5FC /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				6AC6B7A81CA74AAB000C40A6 /* AppDelegate.swift */,
+				6A1DBF201CAB661B00CD7F8A /* User+CoreDataProperties.swift */,
+				6A1DBF211CAB661B00CD7F8A /* User.swift */,
 				6AA5D24F1CA8785B0090E5FC /* ShoppingList+CoreDataProperties.swift */,
 				6A82DC4F1CA76A9C003C605E /* ShoppingList.swift */,
 				6A1DBF1C1CA9DD9900CD7F8A /* HistoryList+CoreDataProperties.swift */,
@@ -152,6 +160,7 @@
 				6AC6B7DD1CA74D22000C40A6 /* Game.swift */,
 				6AC6B7DF1CA74D46000C40A6 /* Games.swift */,
 				6AC6B7E11CA74DAF000C40A6 /* LoginViewController.swift */,
+				6A1DBF241CAB678B00CD7F8A /* RegisterViewController.swift */,
 				6AC6B7E31CA74DE3000C40A6 /* TableViewController.swift */,
 				6AC6B7E51CA74E5A000C40A6 /* ViewController.swift */,
 				6AC6B7DB1CA74CF9000C40A6 /* Details.swift */,
@@ -313,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AC6B7E21CA74DAF000C40A6 /* LoginViewController.swift in Sources */,
+				6A1DBF251CAB678B00CD7F8A /* RegisterViewController.swift in Sources */,
 				6AC6B7E81CA74E8C000C40A6 /* WebViewController.swift in Sources */,
 				6AC6B7E41CA74DE3000C40A6 /* TableViewController.swift in Sources */,
 				6A82DC511CA76A9C003C605E /* ShoppingList.swift in Sources */,
@@ -330,7 +340,9 @@
 				6AA5D2561CA895F90090E5FC /* HistoryListTableViewController.swift in Sources */,
 				6AC6B7EA1CA74EB0000C40A6 /* XMLGameParser.swift in Sources */,
 				6AC6B7DE1CA74D22000C40A6 /* Game.swift in Sources */,
+				6A1DBF221CAB661B00CD7F8A /* User+CoreDataProperties.swift in Sources */,
 				6AA5D23F1CA868A60090E5FC /* UpdateViewController.swift in Sources */,
+				6A1DBF231CAB661B00CD7F8A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
