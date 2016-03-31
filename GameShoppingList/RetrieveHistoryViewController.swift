@@ -19,9 +19,18 @@ class RetrieveHistoryViewController: UIViewController,UIPickerViewDelegate, UIPi
 
     var request = NSFetchRequest(entityName: "HistoryList")
     
+    var retrieveDate : NSDate!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     func compareBtnClick(){
-        request.predicate = NSPredicate(format: "amount " + operatorString + " %f AND buyer CONTAINS %@" , Double(compareAmountTF.text!)!,(nameTF.text?.uppercaseString)! )
-        
+        retrieveDate = datePicker.date
+        xxxxL.text = String(retrieveDate)
+        if nameTF.text?.uppercaseString != ""{
+            request.predicate = NSPredicate(format: "amount " + operatorString + " %f AND buyer CONTAINS %@ AND date <= %@" , Double(compareAmountTF.text!)!,(nameTF.text?.uppercaseString)!,retrieveDate )
+        }
+        else{
+                request.predicate = NSPredicate(format: "amount " + operatorString + " %f AND date <= %@" , Double(compareAmountTF.text!)!,retrieveDate )
+        }
             frc_History = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         frc_History.delegate = self
@@ -34,7 +43,7 @@ class RetrieveHistoryViewController: UIViewController,UIPickerViewDelegate, UIPi
             
         }
         self.retrieveTable.reloadData()
-        
+
         print("xxx")
 //        self.retrieveTable.delegate = self
 //        self.retrieveTable.dataSource = self
@@ -75,9 +84,12 @@ class RetrieveHistoryViewController: UIViewController,UIPickerViewDelegate, UIPi
         operatorString = ">"
         nameTF.text = ""
         compareAmountTF.text = "0.00"
+        datePicker.date = NSDate()
+        
     }
     
     
+    @IBOutlet weak var xxxxL: UILabel!
     @IBOutlet weak var retrieveTable: UITableView!
     
 //    var datePicker: UIDatePicker!
@@ -105,6 +117,11 @@ class RetrieveHistoryViewController: UIViewController,UIPickerViewDelegate, UIPi
         }
         self.retrieveTable.delegate = self
         self.retrieveTable.dataSource = self
+        datePicker.timeZone = NSTimeZone.localTimeZone()
+        
+        retrieveDate = NSDate()
+        datePicker.date = NSDate()
+        xxxxL.text = String(datePicker.date)
 //        datePicker  = UIDatePicker(frame: CGRectMake(150, 300, 120, 40))
 //        datePicker.datePickerMode = UIDatePickerMode.DateAndTime
 //        datePicker.minuteInterval = 1
